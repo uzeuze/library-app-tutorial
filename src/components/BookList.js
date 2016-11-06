@@ -2,9 +2,14 @@ import React, {Component} from 'react';
 
 export default class BookList extends Component {
   render() {
-    let pathName = this.props.location.pathname;
+    let books = this.props.books.map((book) => {
+      return <div key={book.id}>{book.title}</div>
+    });
     return (
-      <div>{pathName}</div>
+      <div>
+        <h1>{this.props.title}</h1>
+        {books}
+      </div>
     );
   }
 }
