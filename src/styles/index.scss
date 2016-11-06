@@ -6,15 +6,61 @@ html {
   }
 }
 
+.book-item {
+  height: 400px;
+}
+
+.book-icon {
+  font-size: 30px;
+  color: #f1f1f1;
+  height: 100%;
+  width: 100%;
+}
+
+.book-icon::before {
+  position: relative;
+  top: 2px;
+  left: 1px;
+}
+
+.cover-container {
+  height: 300px;
+  width: 200px;
+  position: relative;
+  margin: 0 auto;
+}
+
 .book-cover {
   height: 300px;
   width: 200px;
 }
 
 .btn-favourite {
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
   background-color: red;
 }
 
 .btn-read {
-  background-color: green;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: green;
+}
+
+.btn-favourite-active .book-icon{
+  color: #000;
+}
+
+.btn-read-active .book-icon{
+  color: #000;
 }

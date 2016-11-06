@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Book from './Book';
+import {Grid, Row} from 'react-bootstrap';
 
 export default class BookList extends Component {
   render() {
@@ -9,7 +10,11 @@ export default class BookList extends Component {
     return (
       <div>
         <h1>{this.props.title}</h1>
-        {books}
+        <Grid>
+          <Row>
+            {books}
+          </Row>
+        </Grid>        
       </div>
     );
   }

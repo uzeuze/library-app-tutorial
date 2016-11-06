@@ -1,14 +1,31 @@
 import React, {Component} from 'react';
+import {Col, Glyphicon, Tooltip, OverlayTrigger} from 'react-bootstrap';
 
 export default class Book extends Component {
   render() {
+    const tooltipRead = (
+      <Tooltip id="tooltip-read">Add/Remove book from reading list.</Tooltip>
+    );
+    const tooltipFavourite = (
+      <Tooltip id="tooltip-favourite">Add/Remove book from favourites.</Tooltip>
+    );
     return (
-      <div>
-        <h6>{this.props.book.title}</h6>
-        <img className="book-cover" src={this.props.book.cover} />
-        <button className={this.props.book.toRead ? "btn-read" : ""} onClick={this.props.onToReadClick}>Toggle Read List</button>
-        <button className={this.props.book.isFavourite ? "btn-favourite" : ""} onClick={this.props.onFavouriteClick}>Toggle Favourite</button>
-      </div>
+      <Col className="book-item" sm={6} md={3}>
+        <div className="cover-container">
+          <img className="book-cover" src={this.props.book.cover} />
+          <OverlayTrigger placement="bottom" overlay={tooltipRead}>
+            <a className={this.props.book.toRead ? "btn-read btn-read-active" : "btn-read"} onClick={this.props.onToReadClick}>
+              <Glyphicon className="book-icon" glyph="plus" />
+            </a>
+          </OverlayTrigger>
+          <OverlayTrigger placement="bottom" overlay={tooltipFavourite}>
+            <a className={this.props.book.isFavourite ? "btn-favourite btn-favourite-active" : "btn-favourite"} onClick={this.props.onFavouriteClick}>
+              <Glyphicon className="book-icon" glyph="star" />
+            </a>
+          </OverlayTrigger>
+        </div>
+        <h6 className="text-center">{this.props.book.title}</h6>
+      </Col>
     );
   }
 }
