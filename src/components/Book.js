@@ -5,8 +5,8 @@ export default class Book extends Component {
     return (
       <div>
         <h6>{this.props.book.title}</h6>
-        <button onClick={this.props.onToReadClick}>Toggle Read List</button>
-        <button onClick={this.props.onFavouriteClick}>Toggle Favourite</button>
+        <button className={this.props.book.toRead ? "btn-read" : ""} onClick={this.props.onToReadClick}>Toggle Read List</button>
+        <button className={this.props.book.isFavourite ? "btn-favourite" : ""} onClick={this.props.onFavouriteClick}>Toggle Favourite</button>
       </div>
     );
   }
