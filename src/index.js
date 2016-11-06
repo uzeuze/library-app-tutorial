@@ -9,9 +9,10 @@ import './styles/index.scss';
 
 render((
   <Router history={hashHistory}>
-    <Route path="/" component={App} />
-    <Route path="/all-books" component={AllBooks} />
-    <Route path="/reading-list" component={ReadingList}/>
-    <Route path="/favourite-books" component={FavouriteBooks} />
+    <Route path="/" component={App}>
+      <Route path="/all-books" component={AllBooks} />
+      <Route path="/reading-list" component={ReadingList}/>
+      <Route path="/favourite-books" component={FavouriteBooks} />
+    </Route>
   </Router>
 ),document.getElementById('root'));
