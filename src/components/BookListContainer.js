@@ -28,19 +28,46 @@ let books = [
 ];
 
 export default class BookListContainer extends Component {
+  constructor() {
+      super();
+      this.state = {
+        books: books
+      }
+  }
+  handleToReadClick(book_id) {
+    let newBooks = this.state.books.slice();
+    for(let i=0; i<newBooks.length; i++){
+      if(newBooks[i].id === book_id) {
+        newBooks[i].toRead = !newBooks[i].toRead;
+      }
+    }
+    this.setState({books: newBooks});
+  }
+
+  handleFavouriteClick(book_id) {
+    let newBooks = this.state.books.slice();
+    for(let i=0; i<newBooks.length; i++){
+      if(newBooks[i].id === book_id) {
+        newBooks[i].isFavourite = !newBooks[i].isFavourite;
+      }
+    }
+    this.setState({books: newBooks});
+  }
+
   render() {
     let pathName = this.props.location.pathname;
+    let bookData = this.state.books.slice();
     let bookList,
         title;
     switch (pathName) {
       case '/reading-list':
-        bookList = books.filter((book) => {
+        bookList = bookData.filter((book) => {
           return book.toRead;
         });
         title = "ReadingList";
         break;
         case '/favourite-books':
-          bookList = books.filter((book) => {
+          bookList = bookData.filter((book) => {
             return book.isFavourite;
           });
           title = "FavouriteBooks";
@@ -50,7 +77,10 @@ export default class BookListContainer extends Component {
           title = "All Books";
     }
     return (
-      <BookList books={bookList} title={title}/>
+      <BookList books={bookList}
+                title={title}
+                onToReadClick={this.handleToReadClick.bind(this)}
+                onFavouriteClick={this.handleFavouriteClick.bind(this)}/>
     );
   }
 }
