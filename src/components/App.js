@@ -7,7 +7,7 @@ export default class App extends Component {
       <div>
         <h1 className="text-center">Bookstore App</h1>
         <ul role="nav">
-          <li><Link to="/all-books">All Books</Link></li>
+          <li><Link to="/">All Books</Link></li>
           <li><Link to="/reading-list">Reading List</Link></li>
           <li><Link to="/favourite-books">Favourite Books</Link></li>
         </ul>
