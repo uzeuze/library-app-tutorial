@@ -5,6 +5,7 @@ export default class Book extends Component {
     return (
       <div>
         <h6>{this.props.book.title}</h6>
+        <img className="book-cover" src={this.props.book.cover} />
         <button className={this.props.book.toRead ? "btn-read" : ""} onClick={this.props.onToReadClick}>Toggle Read List</button>
         <button className={this.props.book.isFavourite ? "btn-favourite" : ""} onClick={this.props.onFavouriteClick}>Toggle Favourite</button>
       </div>
