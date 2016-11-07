@@ -150,6 +150,8 @@ export default class BookListContainer extends Component {
       this.state = {
         books: []
       }
+      this.handleToReadClick = this.handleToReadClick.bind(this);
+      this.handleFavouriteClick = this.handleFavouriteClick.bind(this);
   }
 
   componentDidMount() {
@@ -198,11 +200,11 @@ export default class BookListContainer extends Component {
           bookList = books.slice();
           title = "All Books";
     }
-    
+
     return (
       <BookList books={bookList}
-                onToReadClick={this.handleToReadClick.bind(this)}
-                onFavouriteClick={this.handleFavouriteClick.bind(this)}/>
+                onToReadClick={this.handleToReadClick}
+                onFavouriteClick={this.handleFavouriteClick}/>
     );
   }
 }
