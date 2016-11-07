@@ -24,7 +24,7 @@ export default class Book extends Component {
             </a>
           </OverlayTrigger>
         </div>
-        <h6 className="text-center">{this.props.book.title}</h6>
+        <h4 className="text-center book-title">{this.props.book.title}</h4>
       </Col>
     );
   }

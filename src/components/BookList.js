@@ -9,12 +9,15 @@ export default class BookList extends Component {
     });
     return (
       <div>
-        <h1>{this.props.title}</h1>
         <Grid>
           <Row>
-            {books}
+            {books.length > 0 ?
+               books
+               :
+               <h3 className="text-center page-empty">You don't have any book in that list.</h3>
+            }
           </Row>
-        </Grid>        
+        </Grid>
       </div>
     );
   }

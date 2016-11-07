@@ -1,9 +1,33 @@
-$main-color: #f1f1f1;
+$main-color: #F0F4C3;
 
 html {
   body {
     background-color: $main-color;
+    color: #FFF;
   }
+}
+
+.app-title {
+  color: #ff3466;
+}
+
+#nav-library {
+  width: 340px;
+  border: none;
+  margin: 0 auto 20px auto;
+  li {
+    a:hover, a:active, a:focus {
+      background-color: #383B76;
+      color: #fff;
+      border: none;
+    }
+  }
+}
+
+.tab-active {
+  background-color: #383B76;
+  color: #fff;
+  border-bottom: 4px solid #ff3466 !important;
 }
 
 .book-item {
@@ -49,7 +73,7 @@ html {
   width: 40px;
   border-radius: 50%;
   text-align: center;
-  background-color: red;
+  background-color: #F26F54;
 }
 
 .btn-read {
@@ -60,13 +84,26 @@ html {
     width: 40px;
     border-radius: 50%;
     text-align: center;
-    background-color: green;
+    background-color: #3FB98C;
 }
 
-.btn-favourite-active .book-icon{
-  color: #000;
+.btn-favourite-active .book-icon, .btn-read-active .book-icon{
+  color: #383B76;
 }
 
-.btn-read-active .book-icon{
-  color: #000;
+.book-title, .page-empty {
+  color: #424242;
+}
+
+@media (max-width: 410px) {
+  #nav-library {
+    width: 140px;  
+    li {
+      width: 140px;
+      margin-bottom: 10px;
+      a {
+        text-align: center;
+      }
+    }
+  }
 }

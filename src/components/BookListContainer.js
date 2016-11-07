@@ -199,7 +199,6 @@ export default class BookListContainer extends Component {
     }
     return (
       <BookList books={bookList}
-                title={title}
                 onToReadClick={this.handleToReadClick.bind(this)}
                 onFavouriteClick={this.handleFavouriteClick.bind(this)}/>
     );
