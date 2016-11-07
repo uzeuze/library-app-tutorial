@@ -1,0 +1,38 @@
+.App__title {
+  color: #ff3466;
+}
+
+.App__navbar {
+  width: 360px;
+  border: none;
+  margin: 0 auto 20px auto;
+
+  .nav__link:hover,
+  .nav__link:active,
+  .nav__link:focus {
+    background-color: #383B76;
+    color: #fff;
+    border-bottom: 0;
+  }
+
+  .nav__link--active {
+    background-color: #383B76;
+    color: #fff;
+    border-bottom: 4px solid #ff3466 !important;
+  }
+}
+
+
+
+@media (max-width: 410px) {
+  .App__navbar {
+    width: 140px;
+    .nav__item {
+      width: 140px;
+      margin-bottom: 10px;
+    }
+    .nav__link {
+      text-align: center;
+    }
+  }
+}

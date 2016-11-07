@@ -1,0 +1,55 @@
+.Book {
+  height: 400px;
+}
+
+.Book__content {
+  height: 300px;
+  width: 200px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.Book__cover {
+  height: 300px;
+  width: 200px;
+}
+
+.Book__button {
+  position: absolute;
+  bottom: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.Book__button--favourite {
+  right: 50px;
+  background-color: #F26F54;
+}
+
+.Book__button--read {
+  right: 5px;
+  background-color: #3FB98C;
+}
+.Book__icon {
+  font-size: 30px;
+  color: #f1f1f1;
+  height: 100%;
+  width: 100%;
+}
+
+.Book__icon::before {
+  position: relative;
+  top: 2px;
+  left: 1px;
+}
+
+.Book__button--active .Book__icon{
+  color: #383B76;
+}
+
+.tooltip.bottom .tooltip-inner {
+    background-color: #ff3466;
+    font-size: 14px;
+  }
